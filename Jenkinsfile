@@ -11,16 +11,6 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
             }
         }
 
-        stage('val'){
-            steps{
-                bat '''
-                where python
-                python --version
-                echo %PATH%
-                '''
-            }
-        }
-
         stage('Setup Python') {       
             steps{                            // sh means execute shell commands on linux/unix agents
                 bat '''                        
