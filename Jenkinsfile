@@ -15,7 +15,7 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
             steps{                            // sh means execute shell commands on linux/unix agents
                 bat '''                        
                 python -m venv env
-                venv\Scripts\activate
+                venv/Scripts/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
                 '''
@@ -26,7 +26,7 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
         stage('Run tests') {
             steps{
                 bat '''
-                venv\Scripts\activate
+                venv/Scripts/activate
                 pytest                          // Pytest searches for "tests" directory and then runs test.py
 
                 '''
@@ -38,7 +38,7 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
         stage('Build Package') {
             steps{
                 bat '''
-                venv\Scripts\activate
+                venv/Scripts/activate
                 pip install build                 // Uses python build tool to read configuration from setup.py
                 '''
             }
