@@ -35,8 +35,7 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
         stage('Run tests') {
             steps{
                 bat '''
-                env\\Scripts\\python -m pytest           // Pytest searches for "tests" directory and then runs test.py
-
+                env\\Scripts\\python -m pytest    
                 '''
             }
         }
@@ -47,7 +46,7 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
             steps{
                 bat '''
                 env\\Scripts\\python -m pip install build
-                env\\Scripts\\python -m build                // Uses python build tool to read configuration from setup.py
+                env\\Scripts\\python -m build               
                 '''
             }
         }
