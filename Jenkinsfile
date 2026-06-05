@@ -11,7 +11,7 @@ pipeline {                                // Starts the Jenkins Declarative Pipe
             }
         }
 
-        stage('validation'){
+        stage('val'){
             steps{
                 bat '''
                 where python
